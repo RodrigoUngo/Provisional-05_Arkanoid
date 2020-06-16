@@ -7,6 +7,8 @@ namespace Arkanoid
         public Game()
         {
             InitializeComponent();
+            Height = ClientSize.Height;
+            Width = ClientSize.Width;
         }
     }
 }
