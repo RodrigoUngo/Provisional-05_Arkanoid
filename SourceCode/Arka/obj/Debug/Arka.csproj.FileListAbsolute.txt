@@ -1,0 +1,10 @@
+C:\Users\AIT\Documents\POO\Provisional-05_Arkanoid\SourceCode\Arka\bin\Debug\Arka.exe.config
+C:\Users\AIT\Documents\POO\Provisional-05_Arkanoid\SourceCode\Arka\bin\Debug\Arka.exe
+C:\Users\AIT\Documents\POO\Provisional-05_Arkanoid\SourceCode\Arka\bin\Debug\Arka.pdb
+C:\Users\AIT\Documents\POO\Provisional-05_Arkanoid\SourceCode\Arka\obj\Debug\Arka.csprojAssemblyReference.cache
+C:\Users\AIT\Documents\POO\Provisional-05_Arkanoid\SourceCode\Arka\obj\Debug\Arka.Properties.Resources.resources
+C:\Users\AIT\Documents\POO\Provisional-05_Arkanoid\SourceCode\Arka\obj\Debug\Arka.csproj.GenerateResource.cache
+C:\Users\AIT\Documents\POO\Provisional-05_Arkanoid\SourceCode\Arka\obj\Debug\Arka.exe
+C:\Users\AIT\Documents\POO\Provisional-05_Arkanoid\SourceCode\Arka\obj\Debug\Arka.pdb
+C:\Users\AIT\Documents\POO\Provisional-05_Arkanoid\SourceCode\Arka\obj\Debug\Arka.Play.resources
+C:\Users\AIT\Documents\POO\Provisional-05_Arkanoid\SourceCode\Arka\obj\Debug\Arka.Game.resources
