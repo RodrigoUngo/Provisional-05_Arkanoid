@@ -9,6 +9,7 @@
       <e p="Arkanoid.sln" t="IncludeFlat" />
       <e p="bin" t="ExcludeRecursive" />
       <e p="CustomPictureBox.cs" t="Include" />
+      <e p="DataBaseController.cs" t="Include" />
       <e p="Form1.cs" t="Include" />
       <e p="Form1.Designer.cs" t="Include" />
       <e p="Form1.resx" t="Include" />
@@ -18,6 +19,7 @@
       <e p="GameData.cs" t="Include" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="packages" t="ExcludeRecursive" />
+      <e p="packages.config" t="Include" />
       <e p="Play.cs" t="Include" />
       <e p="Play.Designer.cs" t="Include" />
       <e p="Play.resx" t="Include" />

@@ -15,15 +15,12 @@ namespace Arkanoid
 
         private void Play_Load(object sender, EventArgs e)
         {
-
             //Cargar jugador
             pictureBox1.BackgroundImage = Image.FromFile("../../Recursos/Player.png");
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox1.Top = Height - pictureBox1.Height;
             pictureBox1.Left = Width / 2 - pictureBox1.Width / 2;
-            
-            LoadTiles();
-            
+
             ball = new PictureBox();
             ball.Width = ball.Height = 40;
             ball.BackgroundImage = Image.FromFile("../../Recursos/Ball.png");
@@ -31,6 +28,10 @@ namespace Arkanoid
             ball.Left = Width / 2 - ball.Width / 2;
             ball.BackgroundImageLayout = ImageLayout.Stretch;
             Controls.Add(ball);
+            
+            LoadTiles();
+            
+            timer1.Start();
         }
         
         //Cargar bloques
@@ -42,7 +43,7 @@ namespace Arkanoid
             int cpbheight = (int)(Height * 0.5) / yAxis;
             int cpbwidth = Width / xAxis;
             
-            var cpb = new CustomPictureBox[yAxis, xAxis];
+            cpb = new CustomPictureBox[yAxis, xAxis];
 
             for (int i = 0; i < yAxis; i++)
             {
@@ -51,6 +52,8 @@ namespace Arkanoid
                     //Cantidad de golpes necesarios
                     cpb[i,j] = new CustomPictureBox();
                     if (i == 0)
+                        cpb[i, j].Hits = 3;
+                    else if (i == 1)
                         cpb[i, j].Hits = 2;
                     else
                         cpb[i, j].Hits = 1;
@@ -91,7 +94,67 @@ namespace Arkanoid
                     pictureBox1.Left = e.X - (pictureBox1.Width/2);
                 }
             }
+        }
+
+        private void Play_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Space)
+                GameData.gamestarted = true;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if(!GameData.gamestarted)
+                return;
+
+            ball.Left += GameData.dirX;
+            ball.Top += GameData.dirY;
             
+            bounceball();
+        }
+
+        private void bounceball()
+        {
+            if (ball.Bottom > Height)
+            {
+                Application.Exit();
+            }
+
+            if (ball.Left < 0 || ball.Right > Width)
+            {
+                GameData.dirX = -GameData.dirX;
+                return;
+            }
+
+            if (ball.Bounds.IntersectsWith(pictureBox1.Bounds))
+            {
+                GameData.dirY = -GameData.dirY;
+            }
+            
+            for (int i = 6; i >= 0; i--)
+            {
+                for (int j = 0; j < 10; j++)
+                {
+                    if (ball.Bounds.IntersectsWith(cpb[i, j].Bounds))
+                    {
+                        if (i == 0)
+                            GameData.points += 50;
+                        else if (i == 1)
+                            GameData.points += 35;
+                        else
+                            GameData.points += (7 - i) * 5;
+                        
+                        cpb[i, j].Hits--;
+                        
+                        if (cpb[i, j].Hits == 0)
+                            Controls.Remove(cpb[i, j]);
+
+                        GameData.dirY = -GameData.dirY;
+
+                        return;
+                    }
+                }
+            }
         }
     }
 }
