@@ -109,7 +109,7 @@ namespace Arkanoid
 
             ball.Left += GameData.dirX;
             ball.Top += GameData.dirY;
-            
+
             bounceball();
         }
 
@@ -117,7 +117,10 @@ namespace Arkanoid
         {
             if (ball.Bottom > Height)
             {
-                Application.Exit();
+                GameData.livesleft--;
+                ball.Top = Height - pictureBox1.Height - ball.Height;
+                ball.Left = pictureBox1.Left + pictureBox1.Width / 2;
+                GameData.gamestarted = false;
             }
 
             if (ball.Left < 0 || ball.Right > Width)
@@ -135,19 +138,22 @@ namespace Arkanoid
             {
                 for (int j = 0; j < 10; j++)
                 {
-                    if (ball.Bounds.IntersectsWith(cpb[i, j].Bounds))
+                    if (cpb[i, j] != null && ball.Bounds.IntersectsWith(cpb[i, j].Bounds))
                     {
-                        if (i == 0)
+                        if (i == 0 && cpb[i, j].Hits == 0)
                             GameData.points += 50;
-                        else if (i == 1)
+                        else if (i == 1 && cpb[i, j].Hits == 0)
                             GameData.points += 35;
                         else
                             GameData.points += (7 - i) * 5;
                         
                         cpb[i, j].Hits--;
-                        
+
                         if (cpb[i, j].Hits == 0)
+                        {
                             Controls.Remove(cpb[i, j]);
+                            cpb[i, j] = null;
+                        }
 
                         GameData.dirY = -GameData.dirY;
 

@@ -17,6 +17,7 @@
       <e p="Game.Designer.cs" t="Include" />
       <e p="Game.resx" t="Include" />
       <e p="GameData.cs" t="Include" />
+      <e p="GameOverException.cs" t="Include" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="packages" t="ExcludeRecursive" />
       <e p="packages.config" t="Include" />

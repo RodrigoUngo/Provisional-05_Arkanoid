@@ -106,6 +106,7 @@
           <DependentUpon>Game.cs</DependentUpon>
         </Compile>
         <Compile Include="GameData.cs" />
+        <Compile Include="GameOverException.cs" />
         <Compile Include="Play.cs">
           <SubType>UserControl</SubType>
         </Compile>
