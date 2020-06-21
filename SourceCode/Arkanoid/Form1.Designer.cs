@@ -29,17 +29,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.game1 = new Arkanoid.Game();
+            this.mainMenu1 = new Arkanoid.MainMenu();
             this.SuspendLayout();
             // 
-            // game1
+            // mainMenu1
             // 
-            this.game1.BackColor = System.Drawing.Color.Transparent;
-            this.game1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.game1.Location = new System.Drawing.Point(0, 0);
-            this.game1.Name = "game1";
-            this.game1.Size = new System.Drawing.Size(869, 498);
-            this.game1.TabIndex = 0;
+            this.mainMenu1.BackColor = System.Drawing.Color.Transparent;
+            this.mainMenu1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mainMenu1.Location = new System.Drawing.Point(0, 0);
+            this.mainMenu1.Name = "mainMenu1";
+            this.mainMenu1.Size = new System.Drawing.Size(869, 498);
+            this.mainMenu1.TabIndex = 0;
             // 
             // Form1
             // 
@@ -48,7 +48,7 @@
             this.BackColor = System.Drawing.Color.DarkBlue;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(869, 498);
-            this.Controls.Add(this.game1);
+            this.Controls.Add(this.mainMenu1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -56,6 +56,6 @@
 
         #endregion
 
-        private Arkanoid.Game game1;
+        private Arkanoid.MainMenu mainMenu1;
     }
 }

@@ -28,11 +28,6 @@ namespace Arkanoid
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (!GameData.gamestarted)
-            {
-                return;
-            }
-
             pointsLabel.Text = Convert.ToString(GameData.points); 
             
             if (GameData.livesleft == 2)
@@ -41,7 +36,8 @@ namespace Arkanoid
                 pictureBox2.Hide();
             else if (GameData.livesleft == 0)
             {
-                pictureBox3.Hide();
+                pictureBox1.Hide();
+                GameData.gameover = true;
             }
         }
     }

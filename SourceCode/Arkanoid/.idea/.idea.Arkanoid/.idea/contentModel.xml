@@ -18,6 +18,12 @@
       <e p="Game.resx" t="Include" />
       <e p="GameData.cs" t="Include" />
       <e p="GameOverException.cs" t="Include" />
+      <e p="Login.cs" t="Include" />
+      <e p="Login.Designer.cs" t="Include" />
+      <e p="Login.resx" t="Include" />
+      <e p="MainMenu.cs" t="Include" />
+      <e p="MainMenu.Designer.cs" t="Include" />
+      <e p="MainMenu.resx" t="Include" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="packages" t="ExcludeRecursive" />
       <e p="packages.config" t="Include" />
@@ -32,6 +38,9 @@
         <e p="Settings.Designer.cs" t="Include" />
         <e p="Settings.settings" t="Include" />
       </e>
+      <e p="Top10.cs" t="Include" />
+      <e p="Top10.Designer.cs" t="Include" />
+      <e p="Top10.resx" t="Include" />
     </e>
   </component>
 </project>

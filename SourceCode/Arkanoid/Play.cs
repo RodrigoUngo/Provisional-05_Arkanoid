@@ -123,6 +123,12 @@ namespace Arkanoid
                 GameData.gamestarted = false;
             }
 
+            if (ball.Top < 0)
+            {
+                GameData.dirY = -GameData.dirY;
+                
+            }
+
             if (ball.Left < 0 || ball.Right > Width)
             {
                 GameData.dirX = -GameData.dirX;
@@ -140,21 +146,27 @@ namespace Arkanoid
                 {
                     if (cpb[i, j] != null && ball.Bounds.IntersectsWith(cpb[i, j].Bounds))
                     {
-                        if (i == 0 && cpb[i, j].Hits == 0)
-                            GameData.points += 50;
-                        else if (i == 1 && cpb[i, j].Hits == 0)
-                            GameData.points += 35;
-                        else
-                            GameData.points += (7 - i) * 5;
-                        
                         cpb[i, j].Hits--;
-
-                        if (cpb[i, j].Hits == 0)
+                        
+                        if (i == 0 && cpb[i, j].Hits == 0)
                         {
+                            GameData.points += 50;
                             Controls.Remove(cpb[i, j]);
                             cpb[i, j] = null;
                         }
-
+                        else if (i == 1 && cpb[i, j].Hits == 0)
+                        {
+                            GameData.points += 35;
+                            Controls.Remove(cpb[i, j]);
+                            cpb[i, j] = null;
+                        }
+                        else if (i > 1 && i < 7 && cpb[i, j].Hits == 0)
+                        {
+                            GameData.points += (7 - i) * 5;
+                            Controls.Remove(cpb[i, j]);
+                            cpb[i, j] = null;
+                        }
+                        
                         GameData.dirY = -GameData.dirY;
 
                         return;

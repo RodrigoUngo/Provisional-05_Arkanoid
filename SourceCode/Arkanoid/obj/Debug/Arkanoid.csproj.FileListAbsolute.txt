@@ -31,3 +31,6 @@ C:\Users\AIT\Documents\POO\Provisional-05_Arkanoid\SourceCode\Arkanoid\bin\Debug
 C:\Users\AIT\Documents\POO\Provisional-05_Arkanoid\SourceCode\Arkanoid\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\AIT\Documents\POO\Provisional-05_Arkanoid\SourceCode\Arkanoid\bin\Debug\System.ValueTuple.xml
 C:\Users\AIT\Documents\POO\Provisional-05_Arkanoid\SourceCode\Arkanoid\obj\Debug\Arkanoid.exe.config
+C:\Users\AIT\Documents\POO\Provisional-05_Arkanoid\SourceCode\Arkanoid\obj\Debug\Arkanoid.MainMenu.resources
+C:\Users\AIT\Documents\POO\Provisional-05_Arkanoid\SourceCode\Arkanoid\obj\Debug\Arkanoid.Login.resources
+C:\Users\AIT\Documents\POO\Provisional-05_Arkanoid\SourceCode\Arkanoid\obj\Debug\Arkanoid.Top10.resources
