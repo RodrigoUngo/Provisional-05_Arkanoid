@@ -6,6 +6,7 @@ namespace Arkanoid
 {
     public partial class Game : UserControl
     {
+        private UserControl Current = null;
         public Game()
         {
             InitializeComponent();
@@ -37,7 +38,17 @@ namespace Arkanoid
             else if (GameData.livesleft == 0)
             {
                 pictureBox1.Hide();
-                GameData.gameover = true;
+                play1.Hide();
+                label1.Hide();
+                label2.Hide();
+                pointsLabel.Hide();
+                Current = new MainMenu();
+                tableLayoutPanel1.Controls.Add(Current,0,0);
+                tableLayoutPanel1.SetColumnSpan(Current,6);
+                tableLayoutPanel1.SetRowSpan(Current,2);
+                Current.Dock = DockStyle.Fill;
+                
+                timer1.Stop();
             }
         }
     }

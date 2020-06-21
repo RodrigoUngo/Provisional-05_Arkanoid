@@ -30,8 +30,6 @@ namespace Arkanoid
             Controls.Add(ball);
             
             LoadTiles();
-            
-            timer1.Start();
         }
         
         //Cargar bloques
@@ -99,7 +97,10 @@ namespace Arkanoid
         private void Play_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Space)
+            {
                 GameData.gamestarted = true;
+                timer1.Start();
+            }
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -107,20 +108,40 @@ namespace Arkanoid
             if(!GameData.gamestarted)
                 return;
 
-            ball.Left += GameData.dirX;
-            ball.Top += GameData.dirY;
-
-            bounceball();
+            try
+            {
+                ball.Left += GameData.dirX;
+                ball.Top += GameData.dirY;
+                
+                bounceball();
+            }
+            catch (OutOfBoundsException ex)
+            {
+                try
+                {
+                    timer1.Stop();
+                    GameData.livesleft--;
+                    if (GameData.livesleft == 0)
+                    {
+                        throw new GameOverException("Has perdido!");
+                    }
+                    ball.Top = Height - pictureBox1.Height - ball.Height;
+                    ball.Left = pictureBox1.Left + pictureBox1.Width / 2;
+                    GameData.gamestarted = false;
+                }
+                catch (GameOverException ex2)
+                {
+                    MessageBox.Show(ex2.Message);
+                }
+            }
+            
         }
 
         private void bounceball()
         {
             if (ball.Bottom > Height)
             {
-                GameData.livesleft--;
-                ball.Top = Height - pictureBox1.Height - ball.Height;
-                ball.Left = pictureBox1.Left + pictureBox1.Width / 2;
-                GameData.gamestarted = false;
+                throw new OutOfBoundsException();
             }
 
             if (ball.Top < 0)

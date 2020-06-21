@@ -119,6 +119,7 @@
         <Compile Include="MainMenu.Designer.cs">
           <DependentUpon>MainMenu.cs</DependentUpon>
         </Compile>
+        <Compile Include="OutOfBoundsException.cs" />
         <Compile Include="Play.cs">
           <SubType>UserControl</SubType>
         </Compile>
