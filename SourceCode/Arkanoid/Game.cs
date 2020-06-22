@@ -7,13 +7,16 @@ namespace Arkanoid
     public partial class Game : UserControl
     {
         private UserControl Current = null;
-        public Game(string toString)
+        public Game()
         {
             InitializeComponent();
         }
 
         private void Game_Load(object sender, EventArgs e)
         {
+            GameData.livesleft = 3;
+            GameData.points = 0;
+            GameData.gamestarted = false;
             label1.Text = "Vidas:";
             label2.Text = "Puntos:";
             pointsLabel.Text = "0";
@@ -37,6 +40,24 @@ namespace Arkanoid
                 pictureBox2.Hide();
             else if (GameData.livesleft == 0)
             {
+                pictureBox1.Hide();
+                play1.Hide();
+                label1.Hide();
+                label2.Hide();
+                pointsLabel.Hide();
+                Current = new MainMenu();
+                tableLayoutPanel1.Controls.Add(Current,0,0);
+                tableLayoutPanel1.SetColumnSpan(Current,6);
+                tableLayoutPanel1.SetRowSpan(Current,2);
+                Current.Dock = DockStyle.Fill;
+                
+                timer1.Stop();
+            }
+
+            if (GameData.gamewon)
+            {
+                pictureBox3.Hide();
+                pictureBox2.Hide();
                 pictureBox1.Hide();
                 play1.Hide();
                 label1.Hide();

@@ -29,6 +29,7 @@ namespace Arkanoid
             tableLayoutPanel1.Controls.Add(Current, 0, 0);
             tableLayoutPanel1.SetColumnSpan(Current,1);
             tableLayoutPanel1.SetRowSpan(Current,4);
+            Current.Dock = DockStyle.Fill;
         }
         private void btnTop10_Click(object sender, EventArgs e)
         {
@@ -40,6 +41,7 @@ namespace Arkanoid
             tableLayoutPanel1.Controls.Add(Current, 0, 0);
             tableLayoutPanel1.SetColumnSpan(Current,1);
             tableLayoutPanel1.SetRowSpan(Current,4);
+            Current.Dock = DockStyle.Fill;
         }
 
         private void btnExit_Click(object sender, EventArgs e)

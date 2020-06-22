@@ -37,20 +37,20 @@
             this.mainMenu1.BackColor = System.Drawing.Color.Transparent;
             this.mainMenu1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainMenu1.Location = new System.Drawing.Point(0, 0);
-            this.mainMenu1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.mainMenu1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.mainMenu1.Name = "mainMenu1";
-            this.mainMenu1.Size = new System.Drawing.Size(993, 664);
+            this.mainMenu1.Size = new System.Drawing.Size(869, 498);
             this.mainMenu1.TabIndex = 0;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkBlue;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(993, 664);
+            this.ClientSize = new System.Drawing.Size(869, 498);
             this.Controls.Add(this.mainMenu1);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);

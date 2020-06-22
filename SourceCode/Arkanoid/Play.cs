@@ -8,6 +8,7 @@ namespace Arkanoid
     {
         private CustomPictureBox[,] cpb;
         private PictureBox ball;
+        private int TilesLeft;
         public Play()
         {
             InitializeComponent();
@@ -16,6 +17,7 @@ namespace Arkanoid
         private void Play_Load(object sender, EventArgs e)
         {
             //Cargar jugador
+            TilesLeft = 70;
             pictureBox1.BackgroundImage = Image.FromFile("../../Recursos/Player.png");
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox1.Top = Height - pictureBox1.Height;
@@ -112,8 +114,9 @@ namespace Arkanoid
             {
                 ball.Left += GameData.dirX;
                 ball.Top += GameData.dirY;
-                
+
                 bounceball();
+                CheckWin();
             }
             catch (OutOfBoundsException ex)
             {
@@ -125,6 +128,7 @@ namespace Arkanoid
                     {
                         throw new GameOverException("Has perdido!");
                     }
+
                     ball.Top = Height - pictureBox1.Height - ball.Height;
                     ball.Left = pictureBox1.Left + pictureBox1.Width / 2;
                     GameData.gamestarted = false;
@@ -133,6 +137,13 @@ namespace Arkanoid
                 {
                     MessageBox.Show(ex2.Message);
                 }
+            }
+            catch (GameWinException ex)
+            {
+                timer1.Stop();
+                GameData.gamestarted = false;
+                MessageBox.Show(ex.Message);
+                GameData.gamewon = true;
             }
             
         }
@@ -172,18 +183,21 @@ namespace Arkanoid
                         if (i == 0 && cpb[i, j].Hits == 0)
                         {
                             GameData.points += 50;
+                            TilesLeft--;
                             Controls.Remove(cpb[i, j]);
                             cpb[i, j] = null;
                         }
                         else if (i == 1 && cpb[i, j].Hits == 0)
                         {
                             GameData.points += 35;
+                            TilesLeft--;
                             Controls.Remove(cpb[i, j]);
                             cpb[i, j] = null;
                         }
                         else if (i > 1 && i < 7 && cpb[i, j].Hits == 0)
                         {
                             GameData.points += (7 - i) * 5;
+                            TilesLeft--;
                             Controls.Remove(cpb[i, j]);
                             cpb[i, j] = null;
                         }
@@ -194,6 +208,13 @@ namespace Arkanoid
                     }
                 }
             }
+        }
+
+        private void CheckWin()
+        {
+            if (TilesLeft > 0)
+                return;
+            throw new GameWinException("Felicidades, has ganado!");
         }
     }
 }

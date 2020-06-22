@@ -5,6 +5,6 @@
         public static int points = 0, livesleft = 3;
         public static int dirX = 30, dirY = -dirX;
         public static string username;
-        public static bool gamestarted = false, gameover = false;
+        public static bool gamestarted = false, gamewon = false;
     }
 }

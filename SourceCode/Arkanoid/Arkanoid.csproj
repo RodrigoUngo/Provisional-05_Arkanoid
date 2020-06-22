@@ -107,6 +107,7 @@
         </Compile>
         <Compile Include="GameData.cs" />
         <Compile Include="GameOverException.cs" />
+        <Compile Include="GameWinException.cs" />
         <Compile Include="Login.cs">
           <SubType>UserControl</SubType>
         </Compile>

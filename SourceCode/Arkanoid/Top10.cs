@@ -45,6 +45,7 @@ namespace Arkanoid
 
                     players[i, j].Top = sampleTop + sampleTop * i;
                     players[i,j].Font = new Font("Microsoft YaHei", 14F);
+                    players[i, j].ForeColor = Color.White;
                     players[i, j].TextAlign = ContentAlignment.MiddleCenter;
                     Controls.Add(players[i,j]);
                 }

@@ -7,6 +7,7 @@ namespace Arkanoid
 {
     public partial class Login : UserControl
     {
+        private UserControl Current;
         public Login()
         {
             InitializeComponent();
@@ -23,10 +24,16 @@ namespace Arkanoid
 
         private void button2_Click(object sender, EventArgs e)
         {
-            var newGame = new Game(textBox1.Text);
-            newGame.Show();
+            GameData.username = txtName.Text;
+            label1.Hide();
+            txtName.Hide();
+            button1.Hide();
+            button2.Hide();
+            Current = new Game();
+            tableLayoutPanel1.Controls.Add(Current);
+            tableLayoutPanel1.SetColumnSpan(Current,2);
+            tableLayoutPanel1.SetRowSpan(Current,3);
+            Current.Dock = DockStyle.Fill;
         }
-
-        
     }
 }
