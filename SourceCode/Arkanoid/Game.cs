@@ -7,7 +7,7 @@ namespace Arkanoid
     public partial class Game : UserControl
     {
         private UserControl Current = null;
-        public Game()
+        public Game(string toString)
         {
             InitializeComponent();
         }
