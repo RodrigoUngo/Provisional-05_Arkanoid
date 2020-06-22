@@ -10,7 +10,7 @@
 ## FAQ's
 - ¿Cómo se inicia el juego?
 
-En el menú principal se presiona el botón "Jugar", ese botón los llevará a un menú donde deben escribir su nombre de usuario, el que quieran (Máximo 20 caracteres). Cuando hayan ingresado su nombre de usuario presionan el botón "Jugar" el cual finalmente los llevará al juego.
+En el menú principal se presiona el botón "Jugar", ese botón te llevará a un menú donde debes escribir tu nombre de usuario, el que quieras (Máximo 20 caracteres). Cuando hayas ingresado tu nombre de usuario presiona el botón "Jugar" el cual finalmente te llevará al juego.
 
 - ¿Tengo que ingresar mi nombre de usuario cada vez que juego?
 
