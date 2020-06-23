@@ -25,7 +25,7 @@ namespace Arkanoid
         //Cargar listado
         private void LoadPlayers()
         {
-            var playerslist = GameData.username;
+            string[10] playerslist;
             players = new Label[10, 2];
             int sampleTop = label1.Bottom + 50, sampleLeft = 20;
             for (int i = 0; i < 10; i++)
