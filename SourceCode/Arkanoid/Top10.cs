@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -25,7 +27,7 @@ namespace Arkanoid
         //Cargar listado
         private void LoadPlayers()
         {
-            string[10] playerslist;
+            var playerslist = ObtainTopPlayers();
             players = new Label[10, 2];
             int sampleTop = label1.Bottom + 50, sampleLeft = 20;
             for (int i = 0; i < 10; i++)
@@ -57,5 +59,23 @@ namespace Arkanoid
         {
             LoadPlayers();
         }
+        
+        //Obtener la lista Top 10 de BD
+        private List<Player> ObtainTopPlayers()
+                {
+                    var topPlayers = new List<Player>();
+                    DataTable dt = DataBaseController.ExecuteQuery("SELECT pl.nickname, sc.score " +
+                                                            "FROM PLAYER pl, SCORES sc " +
+                                                            "WHERE pl.idPlayer = sc.idPlayer " +
+                                                            "ORDER BY sc.score DESC " +
+                                                            "LIMIT 10");
+        
+                    foreach(DataRow dr in dt.Rows)
+                    {
+                        topPlayers.Add(new Player(dr[0].ToString(), Convert.ToInt32(dr[1])));
+                    }
+        
+                    return topPlayers;
+                }
     }
 }

@@ -33,14 +33,19 @@ namespace Arkanoid
         //Entrar al juego
         private void button2_Click(object sender, EventArgs e)
         {
-	    try
+            try
             {
                 if (txtName.Text.Equals("") || txtName.Text.Equals(null))
-                {
                     throw new EmptyFieldException("No puedes dejar campos vacios. Por favor escribe un nombre");
-                }
-	        GameData.username = txtName.Text;
-            	label1.Hide();
+                if(txtName.Text.Length > 20)
+                    throw  new ExceededMaxCharacterException("Tu nombre es muy largo. Por favor elige un nombre mas corto");
+                GameData.username = txtName.Text;
+                bool verifier = CreatePlayer(txtName.Text);
+                if (verifier)
+                    MessageBox.Show($"Bienvenido de vuelta {txtName.Text}!");
+                else
+                    MessageBox.Show($"Bienvenido {txtName.Text}. Un gusto conocerte!");
+                label1.Hide();
             	txtName.Hide();
             	button1.Hide();
             	button2.Hide();
@@ -53,6 +58,26 @@ namespace Arkanoid
             catch (EmptyFieldException ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        //Crear jugador y comprobar si ya existe en BD
+        private bool CreatePlayer(string nickname)
+        {
+            var dt = DataBaseController.ExecuteQuery($"SELECT * FROM PLAYER WHERE nickname = '{nickname}'");
+
+            if (dt.Rows.Count > 0)
+            {
+                GameData.idPlayer = Convert.ToInt32(DataBaseController.ExecuteQuery($"SELECT idPlayer FROM PLAYER WHERE nickname = '{nickname}'").Rows.ToString());
+                return true;
+            }
+            else
+            {
+                DataBaseController.ExecuteNonQuery("INSERT INTO PLAYER(nickname) VALUES" +
+                                                   $"('{nickname}')");
+                GameData.idPlayer = Convert.ToInt32(DataBaseController.ExecuteQuery($"SELECT idPlayer FROM PLAYER WHERE nickname = '{nickname}'").Rows.ToString());
+                
+                return false;
             }
         }
     }

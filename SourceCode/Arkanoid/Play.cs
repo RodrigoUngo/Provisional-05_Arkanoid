@@ -143,6 +143,9 @@ namespace Arkanoid
                 //Juego Perdido
                 catch (GameOverException ex2)
                 {
+                    //Guardar el punatje en BD
+                    DataBaseController.ExecuteNonQuery("INSERT INTO SCORES(idPlayer, score) VALUES" +
+                                                       $"({GameData.idPlayer}, {GameData.points})");
                     MessageBox.Show(ex2.Message);
                 }
             }
@@ -151,6 +154,9 @@ namespace Arkanoid
             {
                 timer1.Stop();
                 GameData.gamestarted = false;
+                //Guardar el puntaje en BD
+                DataBaseController.ExecuteNonQuery("INSERT INTO SCORES(idPlayer, score) VALUES" +
+                                                   $"({GameData.idPlayer}, {GameData.points})");
                 MessageBox.Show(ex.Message);
                 GameData.gamewon = true;
             }
