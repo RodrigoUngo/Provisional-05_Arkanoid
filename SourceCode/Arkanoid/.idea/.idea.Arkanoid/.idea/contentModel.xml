@@ -10,6 +10,8 @@
       <e p="bin" t="ExcludeRecursive" />
       <e p="CustomPictureBox.cs" t="Include" />
       <e p="DataBaseController.cs" t="Include" />
+      <e p="EmptyFieldException.cs" t="Include" />
+      <e p="ExceededMaxCharacterException.cs" t="Include" />
       <e p="Form1.cs" t="Include" />
       <e p="Form1.Designer.cs" t="Include" />
       <e p="Form1.resx" t="Include" />

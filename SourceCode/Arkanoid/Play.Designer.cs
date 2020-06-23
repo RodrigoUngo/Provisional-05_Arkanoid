@@ -39,10 +39,10 @@ namespace Arkanoid
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(78, 349);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(68, 262);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(227, 66);
+            this.pictureBox1.Size = new System.Drawing.Size(100, 30);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
@@ -52,13 +52,13 @@ namespace Arkanoid
             // 
             // Play
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.pictureBox1);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Name = "Play";
-            this.Size = new System.Drawing.Size(1015, 722);
+            this.Size = new System.Drawing.Size(888, 541);
             this.Load += new System.EventHandler(this.Play_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Play_KeyDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Play_MouseMove);

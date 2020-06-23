@@ -33,7 +33,6 @@ C:\Users\AIT\Documents\POO\Provisional-05_Arkanoid\SourceCode\Arkanoid\bin\Debug
 C:\Users\AIT\Documents\POO\Provisional-05_Arkanoid\SourceCode\Arkanoid\obj\Debug\Arkanoid.exe.config
 C:\Users\AIT\Documents\POO\Provisional-05_Arkanoid\SourceCode\Arkanoid\obj\Debug\Arkanoid.MainMenu.resources
 C:\Users\AIT\Documents\POO\Provisional-05_Arkanoid\SourceCode\Arkanoid\obj\Debug\Arkanoid.Login.resources
-C:\Users\AIT\Documents\POO\Provisional-05_Arkanoid\SourceCode\Arkanoid\obj\Debug\Arkanoid.Top10.resources
 C:\Users\mario\RiderProjects\SourceCode\Provisional-05_Arkanoid\SourceCode\Arkanoid\bin\Debug\Arkanoid.exe.config
 C:\Users\mario\RiderProjects\SourceCode\Provisional-05_Arkanoid\SourceCode\Arkanoid\bin\Debug\Arkanoid.pdb
 C:\Users\mario\RiderProjects\SourceCode\Provisional-05_Arkanoid\SourceCode\Arkanoid\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
@@ -70,3 +69,4 @@ C:\Users\mario\RiderProjects\SourceCode\Provisional-05_Arkanoid\SourceCode\Arkan
 C:\Users\mario\RiderProjects\SourceCode\Provisional-05_Arkanoid\SourceCode\Arkanoid\obj\Debug\Arkanoid.csproj.CopyComplete
 C:\Users\mario\RiderProjects\SourceCode\Provisional-05_Arkanoid\SourceCode\Arkanoid\obj\Debug\Arkanoid.exe
 C:\Users\mario\RiderProjects\SourceCode\Provisional-05_Arkanoid\SourceCode\Arkanoid\obj\Debug\Arkanoid.pdb
+C:\Users\AIT\Documents\POO\Provisional-05_Arkanoid\SourceCode\Arkanoid\obj\Debug\Arkanoid.Top10.resources

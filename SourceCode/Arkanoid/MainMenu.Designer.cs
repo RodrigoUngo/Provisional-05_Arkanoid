@@ -77,10 +77,10 @@ namespace Arkanoid
             this.btnExit.Font = new System.Drawing.Font("Microsoft YaHei UI", 27.75F, System.Drawing.FontStyle.Regular,
                 System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.btnExit.ForeColor = System.Drawing.Color.White;
-            this.btnExit.Location = new System.Drawing.Point(331, 425);
+            this.btnExit.Location = new System.Drawing.Point(331, 433);
             this.btnExit.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(350, 90);
+            this.btnExit.Size = new System.Drawing.Size(350, 75);
             this.btnExit.TabIndex = 3;
             this.btnExit.Text = "Salir";
             this.btnExit.UseVisualStyleBackColor = false;
@@ -96,10 +96,10 @@ namespace Arkanoid
             this.btnTop10.Font = new System.Drawing.Font("Microsoft YaHei UI", 27.75F, System.Drawing.FontStyle.Regular,
                 System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.btnTop10.ForeColor = System.Drawing.Color.White;
-            this.btnTop10.Location = new System.Drawing.Point(331, 320);
+            this.btnTop10.Location = new System.Drawing.Point(331, 327);
             this.btnTop10.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnTop10.Name = "btnTop10";
-            this.btnTop10.Size = new System.Drawing.Size(350, 90);
+            this.btnTop10.Size = new System.Drawing.Size(350, 75);
             this.btnTop10.TabIndex = 2;
             this.btnTop10.Text = "Puntuaciones";
             this.btnTop10.UseVisualStyleBackColor = false;
@@ -127,10 +127,10 @@ namespace Arkanoid
             this.btnSignIn.Font = new System.Drawing.Font("Microsoft YaHei UI", 27.75F,
                 System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.btnSignIn.ForeColor = System.Drawing.Color.White;
-            this.btnSignIn.Location = new System.Drawing.Point(331, 216);
+            this.btnSignIn.Location = new System.Drawing.Point(331, 223);
             this.btnSignIn.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnSignIn.Name = "btnSignIn";
-            this.btnSignIn.Size = new System.Drawing.Size(350, 90);
+            this.btnSignIn.Size = new System.Drawing.Size(350, 75);
             this.btnSignIn.TabIndex = 1;
             this.btnSignIn.Text = "Jugar";
             this.btnSignIn.UseVisualStyleBackColor = false;

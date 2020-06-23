@@ -16,15 +16,17 @@ namespace Arkanoid
 
         private void Play_Load(object sender, EventArgs e)
         {
+            this.Dock = DockStyle.Fill;
             //Cargar jugador
             TilesLeft = 70;
             pictureBox1.BackgroundImage = Image.FromFile("../../Recursos/Player.png");
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox1.Top = Height - pictureBox1.Height;
             pictureBox1.Left = Width / 2 - pictureBox1.Width / 2;
-
+            
+            //Cargar pelota
             ball = new PictureBox();
-            ball.Width = ball.Height = 40;
+            ball.Width = ball.Height = 20;
             ball.BackgroundImage = Image.FromFile("../../Recursos/Ball.png");
             ball.Top = Height - pictureBox1.Height - ball.Height;
             ball.Left = Width / 2 - ball.Width / 2;
@@ -76,6 +78,7 @@ namespace Arkanoid
             }
         }
 
+        //Mover la pelota y el jugador
         private void Play_MouseMove(object sender, MouseEventArgs e)
         {
             if (!GameData.gamestarted)
@@ -96,6 +99,7 @@ namespace Arkanoid
             }
         }
 
+        //Inciar el juego
         private void Play_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Space)
@@ -105,6 +109,7 @@ namespace Arkanoid
             }
         }
 
+        //Comprobante de bloques golpeados, puntos y rebotes
         private void timer1_Tick(object sender, EventArgs e)
         {
             if(!GameData.gamestarted)
@@ -118,26 +123,30 @@ namespace Arkanoid
                 bounceball();
                 CheckWin();
             }
+            //La pelota cae hasta el fondo
             catch (OutOfBoundsException ex)
             {
                 try
                 {
                     timer1.Stop();
                     GameData.livesleft--;
+                    //Juego Perdido
                     if (GameData.livesleft == 0)
                     {
                         throw new GameOverException("Has perdido!");
                     }
 
-                    ball.Top = Height - pictureBox1.Height - ball.Height;
+                    ball.Top = Height - pictureBox1.Height*2 - ball.Height - 15;
                     ball.Left = pictureBox1.Left + pictureBox1.Width / 2;
                     GameData.gamestarted = false;
                 }
+                //Juego Perdido
                 catch (GameOverException ex2)
                 {
                     MessageBox.Show(ex2.Message);
                 }
             }
+            //Juego Ganado
             catch (GameWinException ex)
             {
                 timer1.Stop();
@@ -148,30 +157,36 @@ namespace Arkanoid
             
         }
 
+        //Fisicas de rebote
         private void bounceball()
         {
+            //Caida en el fondo
             if (ball.Bottom > Height)
             {
                 throw new OutOfBoundsException();
             }
 
+            //Rebote en la cima
             if (ball.Top < 0)
             {
                 GameData.dirY = -GameData.dirY;
                 
             }
-
+            
+            //Rebote en los lados
             if (ball.Left < 0 || ball.Right > Width)
             {
                 GameData.dirX = -GameData.dirX;
                 return;
             }
 
+            //Rebote de los bloques
             if (ball.Bounds.IntersectsWith(pictureBox1.Bounds))
             {
                 GameData.dirY = -GameData.dirY;
             }
             
+            //Elininacion de bloques
             for (int i = 6; i >= 0; i--)
             {
                 for (int j = 0; j < 10; j++)
@@ -180,6 +195,7 @@ namespace Arkanoid
                     {
                         cpb[i, j].Hits--;
                         
+                        //Añadiendo puntajes
                         if (i == 0 && cpb[i, j].Hits == 0)
                         {
                             GameData.points += 50;
@@ -210,6 +226,7 @@ namespace Arkanoid
             }
         }
 
+        //Comprobante de victoria
         private void CheckWin()
         {
             if (TilesLeft > 0)

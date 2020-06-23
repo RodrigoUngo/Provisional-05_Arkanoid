@@ -62,7 +62,7 @@ namespace Arkanoid
             this.txtName.Location = new System.Drawing.Point(234, 237);
             this.txtName.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(400, 36);
+            this.txtName.Size = new System.Drawing.Size(399, 36);
             this.txtName.TabIndex = 1;
             // 
             // button1
@@ -71,10 +71,10 @@ namespace Arkanoid
             this.button1.BackColor = System.Drawing.Color.Cyan;
             this.button1.Font = new System.Drawing.Font("Microsoft YaHei UI", 20.25F, System.Drawing.FontStyle.Bold,
                 System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.button1.Location = new System.Drawing.Point(67, 375);
+            this.button1.Location = new System.Drawing.Point(92, 388);
             this.button1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(300, 100);
+            this.button1.Size = new System.Drawing.Size(250, 75);
             this.button1.TabIndex = 2;
             this.button1.Text = "Back to Menu";
             this.button1.UseVisualStyleBackColor = false;
@@ -86,10 +86,10 @@ namespace Arkanoid
             this.button2.BackColor = System.Drawing.Color.Cyan;
             this.button2.Font = new System.Drawing.Font("Microsoft YaHei UI", 20.25F, System.Drawing.FontStyle.Bold,
                 System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.button2.Location = new System.Drawing.Point(501, 375);
+            this.button2.Location = new System.Drawing.Point(526, 388);
             this.button2.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(300, 100);
+            this.button2.Size = new System.Drawing.Size(250, 75);
             this.button2.TabIndex = 3;
             this.button2.Text = "Continue";
             this.button2.UseVisualStyleBackColor = false;

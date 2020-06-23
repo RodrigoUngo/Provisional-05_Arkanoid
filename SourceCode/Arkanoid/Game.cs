@@ -7,16 +7,21 @@ namespace Arkanoid
     public partial class Game : UserControl
     {
         private UserControl Current = null;
+        private UserControl play1 = new Play();
         public Game()
         {
             InitializeComponent();
         }
 
+        //Cargar objetos
         private void Game_Load(object sender, EventArgs e)
         {
+            this.Dock = DockStyle.Fill;
+            //Cargar contadores
             GameData.livesleft = 3;
             GameData.points = 0;
             GameData.gamestarted = false;
+            GameData.gamewon = false;
             label1.Text = "Vidas:";
             label2.Text = "Puntos:";
             pointsLabel.Text = "0";
@@ -27,9 +32,14 @@ namespace Arkanoid
             pictureBox3.BackgroundImage = Image.FromFile("../../Recursos/Heart.png");
             pictureBox3.BackgroundImageLayout = ImageLayout.Stretch;
 
+            //Cargar jugabilidad
+            tableLayoutPanel1.Controls.Add(play1,0,1);
+            tableLayoutPanel1.SetColumnSpan(play1,6);
+            
             timer1.Start();
         }
 
+        //Comprobante de vidas y puntaje
         private void timer1_Tick(object sender, EventArgs e)
         {
             pointsLabel.Text = Convert.ToString(GameData.points); 
@@ -38,6 +48,7 @@ namespace Arkanoid
                 pictureBox3.Hide();
             else if (GameData.livesleft == 1)
                 pictureBox2.Hide();
+            //Juego Perdido
             else if (GameData.livesleft == 0)
             {
                 pictureBox1.Hide();
@@ -53,7 +64,8 @@ namespace Arkanoid
                 
                 timer1.Stop();
             }
-
+            
+            //Juego Ganado
             if (GameData.gamewon)
             {
                 pictureBox3.Hide();

@@ -4,24 +4,25 @@ using System.Windows.Forms;
 
 namespace Arkanoid
 {
-    public partial class Top10 : UserControl
+    public partial class Top10 : Form
     {
         public delegate void OnClosedWindow();
 
+        private UserControl Current;
         public OnClosedWindow CloseAction;
         private Label[,] players;
         public Top10()
         {
             InitializeComponent();
         }
-
-
+        
+        //Regresar al menú principal
         private void button1_Click(object sender, EventArgs e)
         {
-            var backMenu = new Form1();
-            backMenu.Show();
+            Close();
         }
 
+        //Cargar listado
         private void LoadPlayers()
         {
             var playerslist = GameData.username;
