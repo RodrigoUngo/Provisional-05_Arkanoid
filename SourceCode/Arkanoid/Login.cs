@@ -19,17 +19,6 @@ namespace Arkanoid
         //Regresar al menú principal
         private void button1_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (txtName.Text.Equals("") || txtName.Text.Equals(null))
-                {
-                    throw new EmptyFieldException("No puedes dejar campos vacios. Por favor escribe un nombre");
-                }
-            }
-            catch (EmptyFieldException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
             label1.Hide();
             txtName.Hide();
             button1.Hide();
@@ -44,16 +33,27 @@ namespace Arkanoid
         //Entrar al juego
         private void button2_Click(object sender, EventArgs e)
         {
-            GameData.username = txtName.Text;
-            label1.Hide();
-            txtName.Hide();
-            button1.Hide();
-            button2.Hide();
-            Current = new Game();
-            tableLayoutPanel1.Controls.Add(Current,0,0);
-            tableLayoutPanel1.SetColumnSpan(Current,2);
-            tableLayoutPanel1.SetRowSpan(Current,3);
-            Current.Dock = DockStyle.Fill;
+	    try
+            {
+                if (txtName.Text.Equals("") || txtName.Text.Equals(null))
+                {
+                    throw new EmptyFieldException("No puedes dejar campos vacios. Por favor escribe un nombre");
+                }
+	        GameData.username = txtName.Text;
+            	label1.Hide();
+            	txtName.Hide();
+            	button1.Hide();
+            	button2.Hide();
+            	Current = new Game();
+            	tableLayoutPanel1.Controls.Add(Current,0,0);
+            	tableLayoutPanel1.SetColumnSpan(Current,2);
+            	tableLayoutPanel1.SetRowSpan(Current,3);
+            	Current.Dock = DockStyle.Fill;
+            }
+            catch (EmptyFieldException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
