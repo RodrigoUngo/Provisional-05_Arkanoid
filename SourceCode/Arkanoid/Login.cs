@@ -38,25 +38,38 @@ namespace Arkanoid
             {
                 if (txtName.Text.Equals("") || txtName.Text.Equals(null))
                     throw new EmptyFieldException("No puedes dejar campos vacios. Por favor escribe un nombre");
-                if(txtName.Text.Length > 20)
-                    throw  new ExceededMaxCharacterException("Tu nombre es muy largo. Por favor elige un nombre mas corto");
-                GameData.username = txtName.Text;
+                if (txtName.Text.Length > 20)
+                    throw new ExceededMaxCharacterException(
+                        "Tu nombre es muy largo. Por favor elige un nombre mas corto");
+                try
+                {
+                    GameData.username = txtName.Text;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ha ocurrido un error con el guardado de tu nombre de usuario");
+                }
+
                 bool verifier = CreatePlayer(txtName.Text);
                 if (verifier)
                     MessageBox.Show($"Bienvenido de vuelta {txtName.Text}!");
                 else
                     MessageBox.Show($"Bienvenido {txtName.Text}. Un gusto conocerte!");
                 label1.Hide();
-            	txtName.Hide();
-            	button1.Hide();
-            	button2.Hide();
-            	Current = new Game();
-            	tableLayoutPanel1.Controls.Add(Current,0,0);
-            	tableLayoutPanel1.SetColumnSpan(Current,2);
-            	tableLayoutPanel1.SetRowSpan(Current,3);
-            	Current.Dock = DockStyle.Fill;
+                txtName.Hide();
+                button1.Hide();
+                button2.Hide();
+                Current = new Game();
+                tableLayoutPanel1.Controls.Add(Current, 0, 0);
+                tableLayoutPanel1.SetColumnSpan(Current, 2);
+                tableLayoutPanel1.SetRowSpan(Current, 3);
+                Current.Dock = DockStyle.Fill;
             }
             catch (EmptyFieldException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (ExceededMaxCharacterException ex)
             {
                 MessageBox.Show(ex.Message);
             }

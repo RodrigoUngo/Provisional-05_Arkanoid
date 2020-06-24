@@ -74,7 +74,7 @@ namespace Arkanoid
             this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExit.FlatAppearance.BorderSize = 0;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.Font = new System.Drawing.Font("Microsoft YaHei UI", 27.75F, System.Drawing.FontStyle.Regular,
+            this.btnExit.Font = new System.Drawing.Font("Showcard Gothic", 27.75F, System.Drawing.FontStyle.Regular,
                 System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.btnExit.ForeColor = System.Drawing.Color.White;
             this.btnExit.Location = new System.Drawing.Point(331, 433);
@@ -93,7 +93,7 @@ namespace Arkanoid
             this.btnTop10.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTop10.FlatAppearance.BorderSize = 0;
             this.btnTop10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTop10.Font = new System.Drawing.Font("Microsoft YaHei UI", 27.75F, System.Drawing.FontStyle.Regular,
+            this.btnTop10.Font = new System.Drawing.Font("Showcard Gothic", 27.75F, System.Drawing.FontStyle.Regular,
                 System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.btnTop10.ForeColor = System.Drawing.Color.White;
             this.btnTop10.Location = new System.Drawing.Point(331, 327);
@@ -101,7 +101,7 @@ namespace Arkanoid
             this.btnTop10.Name = "btnTop10";
             this.btnTop10.Size = new System.Drawing.Size(350, 75);
             this.btnTop10.TabIndex = 2;
-            this.btnTop10.Text = "Puntuaciones";
+            this.btnTop10.Text = "Puntajes";
             this.btnTop10.UseVisualStyleBackColor = false;
             this.btnTop10.Click += new System.EventHandler(this.btnTop10_Click);
             // 
@@ -124,8 +124,8 @@ namespace Arkanoid
             this.btnSignIn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSignIn.FlatAppearance.BorderSize = 0;
             this.btnSignIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSignIn.Font = new System.Drawing.Font("Microsoft YaHei UI", 27.75F,
-                System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.btnSignIn.Font = new System.Drawing.Font("Showcard Gothic", 27.75F, System.Drawing.FontStyle.Regular,
+                System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.btnSignIn.ForeColor = System.Drawing.Color.White;
             this.btnSignIn.Location = new System.Drawing.Point(331, 223);
             this.btnSignIn.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);

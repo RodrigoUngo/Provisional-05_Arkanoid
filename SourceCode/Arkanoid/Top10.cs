@@ -29,15 +29,15 @@ namespace Arkanoid
         {
             var playerslist = ObtainTopPlayers();
             players = new Label[10, 2];
-            int sampleTop = label1.Bottom + 10, sampleLeft = 20;
+            int sampleTop = label1.Bottom, sampleLeft = 20;
             try
             {
                 for (int i = 0; i < 10; i++)
                 {
                     for (int j = 0; j < 2; j++)
                     {
-                        players[i,j]= new Label();
-                        if (j==0)
+                        players[i, j] = new Label();
+                        if (j == 0)
                         {
                             players[i, j].Text = playerslist[i].Nickname;
                             players[i, j].Left = sampleLeft;
@@ -45,24 +45,28 @@ namespace Arkanoid
                         else
                         {
                             players[i, j].Text = playerslist[i].Score.ToString();
-                            players[i, j].Left = Width/2 + sampleLeft;
+                            players[i, j].Left = Width / 2 + sampleLeft;
                         }
-                    
+
                         players[i, j].Top = sampleTop + 40 * i;
-                    
+
                         players[i, j].Height += 4;
-                        players[i, j].Width += 30;
-                    
-                        players[i,j].Font = new Font("Microsoft YaHei", 14F);
+                        players[i, j].Width += 160;
+
+                        players[i, j].Font = new Font("Showcard Gothic", 14F);
                         players[i, j].ForeColor = Color.Black;
                         players[i, j].TextAlign = ContentAlignment.MiddleCenter;
-                        Controls.Add(players[i,j]);
+                        Controls.Add(players[i, j]);
                     }
                 }
             }
             catch (ArgumentOutOfRangeException ex)
             {
                 MessageBox.Show("Todavía no hay 10 o más puntajes");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ha ocurrido un error en la carga del Top 10");
             }
         }
 
