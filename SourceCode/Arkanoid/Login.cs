@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 
@@ -68,14 +69,22 @@ namespace Arkanoid
 
             if (dt.Rows.Count > 0)
             {
-                GameData.idPlayer = Convert.ToInt32(DataBaseController.ExecuteQuery($"SELECT idPlayer FROM PLAYER WHERE nickname = '{nickname}'").Rows.ToString());
+                var dt2 = DataBaseController.ExecuteQuery($"SELECT idPlayer FROM PLAYER WHERE nickname = '{nickname}'");
+                foreach (DataRow dr in dt2.Rows)
+                {
+                    GameData.idPlayer = Convert.ToInt32(dr[0]);
+                }
                 return true;
             }
             else
             {
                 DataBaseController.ExecuteNonQuery("INSERT INTO PLAYER(nickname) VALUES" +
                                                    $"('{nickname}')");
-                GameData.idPlayer = Convert.ToInt32(DataBaseController.ExecuteQuery($"SELECT idPlayer FROM PLAYER WHERE nickname = '{nickname}'").Rows.ToString());
+                var dt3 = DataBaseController.ExecuteQuery($"SELECT idPlayer FROM PLAYER WHERE nickname = '{nickname}'");
+                foreach (DataRow dr in dt3.Rows)
+                {
+                    GameData.idPlayer = Convert.ToInt32(dr[0]);
+                }
                 
                 return false;
             }

@@ -11,5 +11,6 @@
             Nickname = nickname;
             Score = score;
         }
+        
     }
 }

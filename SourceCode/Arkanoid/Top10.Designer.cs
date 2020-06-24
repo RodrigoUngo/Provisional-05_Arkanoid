@@ -51,9 +51,10 @@ namespace Arkanoid
             // 
             this.btnReturn.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (192)))), ((int) (((byte) (192)))),
                 ((int) (((byte) (255)))));
+            this.btnReturn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReturn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold,
                 System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.btnReturn.Location = new System.Drawing.Point(382, 535);
+            this.btnReturn.Location = new System.Drawing.Point(381, 535);
             this.btnReturn.Margin = new System.Windows.Forms.Padding(0);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(141, 30);
@@ -69,15 +70,14 @@ namespace Arkanoid
             this.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (192)))), ((int) (((byte) (192)))),
                 ((int) (((byte) (255)))));
             this.ClientSize = new System.Drawing.Size(521, 562);
-            this.Load += new System.EventHandler(this.Top10_Load);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.Color.Black;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Top10";
-            this.Text = "Top10";
+            this.Text = "Top 10";
+            this.Load += new System.EventHandler(this.Top10_Load);
             this.ResumeLayout(false);
         }
 
